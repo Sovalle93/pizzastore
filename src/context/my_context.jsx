@@ -3,36 +3,10 @@ import { useNavigate } from 'react-router-dom'
 
 const PizzaCalc = createContext();
 
-const PizzaProvider = ({ children }) => {
-  const [detailsCart, setDetailsCart] = useState([]);
+const PizzaShop = ({ children }) => {
+  const [shoppingCart, setshoppingCart] = useState([]);
   const [info, setInfo] = useState([]);
   const navigate = useNavigate();
-
-  const addPizza = ({ id, price, name, img }) => {
-    const food = { id, price, name, img, count: 1 };
-    const mapFood = detailsCart.findIndex((p) => p.id === id);
-
-    if (mapFood >= 0) {
-      detailsCart[mapFood].count++;
-      setDetailsCart([...detailsCart]);
-    } else {
-      setDetailsCart([...detailsCart, food]);
-    }
-  };
-
-  const increase = (i) => {
-    detailsCart[i].count++;
-    setDetailsCart([...detailsCart]);
-  };
-
-  const decrease = (i) => {
-    if (detailsCart[i].count === 1) {
-      detailsCart.splice(i, 1);
-    } else {
-      detailsCart[i].count--;
-    }
-    setDetailsCart([...detailsCart]);
-  };
 
   const saveInfo = (pizzas) => {
     setInfo(pizzas);
@@ -62,13 +36,40 @@ const PizzaProvider = ({ children }) => {
     consultarJSON();
   }, []);
 
-  const total = detailsCart.reduce((a, { count, price }) => a + price * count, 0);
+
+  const addPizza = ({ id, price, name, img }) => {
+    const food = { id, price, name, img, count: 1 };
+    const mapFood = shoppingCart.findIndex((p) => p.id === id);
+
+    if (mapFood >= 0) {
+      shoppingCart[mapFood].count++;
+      setshoppingCart([...shoppingCart]);
+    } else {
+      setshoppingCart([...shoppingCart, food]);
+    }
+  };
+
+  const increase = (i) => {
+    shoppingCart[i].count++;
+    setshoppingCart([...shoppingCart]);
+  };
+
+  const decrease = (i) => {
+    if (shoppingCart[i].count === 1) {
+      shoppingCart.splice(i, 1);
+    } else {
+      shoppingCart[i].count--;
+    }
+    setshoppingCart([...shoppingCart]);
+  };
+
+const total = shoppingCart.reduce((a, { count, price }) => a + price * count, 0);
 
   return (
     <PizzaCalc.Provider
       value={{
-        detailsCart,
-        setDetailsCart,
+        shoppingCart,
+        setshoppingCart,
         addPizza,
         increase,
         decrease,
@@ -83,5 +84,5 @@ const PizzaProvider = ({ children }) => {
   );
 };
 
-export { PizzaProvider, PizzaCalc };
+export { PizzaShop, PizzaCalc };
 

@@ -3,16 +3,16 @@ import { PizzaCalc } from '../context/my_context'
 import Button from 'react-bootstrap/Button'
 
 const Carrito = () => {
-  const { detailsCart, increase, decrease, total } = useContext(PizzaCalc);
+  const { shoppingCart, increase, decrease, total } = useContext(PizzaCalc);
 
   return (
     <div className="cart">
       <h2>Carrito</h2>
-      {detailsCart.length === 0 ? (
+      {shoppingCart.length === 0 ? (
         <p>Tu carro esta vacío!</p>
       ) : (
         <>
-          {detailsCart.map((item, index) => (
+          {shoppingCart.map((item, index) => (
             <div key={item.id} className="cart-item">
               <div className="cart-item-info">
                 <p>{item.name}</p>

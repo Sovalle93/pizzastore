@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { PizzaProvider } from './context/my_context'
+import { PizzaShop} from './context/my_context'
 import Home from './views/Home'
 import Pizza from './views/Pizza'
 import Carrito from './views/Carrito'
@@ -9,7 +9,7 @@ import './App.css'
 
 const App = () => {
   return (
-    <PizzaProvider>
+    <PizzaShop>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/carrito" element={<Carrito />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </PizzaProvider>
+    </PizzaShop>
   );
 };
 
