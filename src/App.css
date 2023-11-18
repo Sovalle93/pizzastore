@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 50px; 
+}
+
+#root {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 65rem;
+  background-color: #17a2b8;
+  padding: 1rem;
+}
+
+.customNavLink{
+  color: #ffffff;
+}
+
+.banner{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem;
+  background-image: url('https://img.freepik.com/free-vector/seamless-pizza-ingredients_1176-269.jpg?t=st=1700278461~exp=1700279061~hmac=8b60d05d72c3b75e2a4031f378b77a23a4a4ec9e9da207b0af41c1a20a5a797c');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: #fff;
+}
+
+.pizzalogo{
+  width: 2rem;
+  height: 2rem;
+}
+
+.carritologo{
+  width: 2rem;
+  height: 2rem;
+}
+
+.pizzagallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5rem;
+}
+
+.pizzacard {
+  width: 18rem;
+  margin: 10px;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+}
+
+.pizzacard img {
+  max-width: 100%; 
+  border-bottom: 1px solid #ddd; 
+}
+
+.pizzacard hr {
+  margin: 10px 0; 
+}
+
+.pizzacard ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.pizzacard li {
+  margin-bottom: 5px; 
+}
+
+.actions{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.customButton1{
+  background-color: #0dcaf0;
+  color: white;
+}
+
+.customButton2{
+  background-color: #dc3545;
+  color: white;
+}
+
+.customButton3{
+  background-color: darkred;
+  color: white;
+}
+
+.customButton4{
+  background-color: seagreen;
+  color: white;
+}
+
+.pizzadesc {
+  display: flex;
+  padding: 2rem;
+  gap: 1rem;
+  border: solid 1px black;
+}
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  padding: 6rem;
+  margin-left: 18rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(204, 204, 204);
+  width: 50%;
+}
