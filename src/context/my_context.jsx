@@ -9,14 +9,14 @@ const PizzaProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const addPizza = ({ id, price, name, img }) => {
-    const product = { id, price, name, img, count: 1 };
-    const findProduct = detailsCart.findIndex((p) => p.id === id);
+    const food = { id, price, name, img, count: 1 };
+    const mapFood = detailsCart.findIndex((p) => p.id === id);
 
-    if (findProduct >= 0) {
-      detailsCart[findProduct].count++;
+    if (mapFood >= 0) {
+      detailsCart[mapFood].count++;
       setDetailsCart([...detailsCart]);
     } else {
-      setDetailsCart([...detailsCart, product]);
+      setDetailsCart([...detailsCart, food]);
     }
   };
 
